@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\LANGAGE L3\\ASP.NET\\TEST\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{84B498F8-6746-478C-87C3-4903A4843703}|TEST\\TEST.csproj|d:\\langage l3\\asp.net\\test\\test\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84B498F8-6746-478C-87C3-4903A4843703}|TEST\\TEST.csproj|solutionrelative:test\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84B498F8-6746-478C-87C3-4903A4843703}|TEST\\TEST.csproj|d:\\langage l3\\asp.net\\test\\test\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{84B498F8-6746-478C-87C3-4903A4843703}|TEST\\TEST.csproj|solutionrelative:test\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84B498F8-6746-478C-87C3-4903A4843703}|TEST\\TEST.csproj|d:\\langage l3\\asp.net\\test\\test\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84B498F8-6746-478C-87C3-4903A4843703}|TEST\\TEST.csproj|solutionrelative:test\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "test.cs",
+              "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\TEST\\TEST\\test.cs",
+              "RelativeDocumentMoniker": "TEST\\test.cs",
+              "ToolTip": "D:\\LANGAGE L3\\ASP.NET\\TEST\\TEST\\test.cs",
+              "RelativeToolTip": "TEST\\test.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T05:44:18.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\TEST\\TEST\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "TEST\\MainWindow.xaml",
+              "ToolTip": "D:\\LANGAGE L3\\ASP.NET\\TEST\\TEST\\MainWindow.xaml*",
+              "RelativeToolTip": "TEST\\MainWindow.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-18T05:30:34.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\TEST\\TEST\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "TEST\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\LANGAGE L3\\ASP.NET\\TEST\\TEST\\MainWindow.xaml.cs",
+              "RelativeToolTip": "TEST\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T05:30:04.934Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

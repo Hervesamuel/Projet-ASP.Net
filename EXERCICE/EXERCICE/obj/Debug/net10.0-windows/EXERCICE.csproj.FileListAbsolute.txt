@@ -1,0 +1,16 @@
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\bin\Debug\net10.0-windows\EXERCICE.exe
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\bin\Debug\net10.0-windows\EXERCICE.deps.json
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\bin\Debug\net10.0-windows\EXERCICE.runtimeconfig.json
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\bin\Debug\net10.0-windows\EXERCICE.dll
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\bin\Debug\net10.0-windows\EXERCICE.pdb
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\obj\Debug\net10.0-windows\EXERCICE.Acceuil.resources
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\obj\Debug\net10.0-windows\EXERCICE.csproj.GenerateResource.cache
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\obj\Debug\net10.0-windows\EXERCICE.GeneratedMSBuildEditorConfig.editorconfig
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\obj\Debug\net10.0-windows\EXERCICE.AssemblyInfoInputs.cache
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\obj\Debug\net10.0-windows\EXERCICE.AssemblyInfo.cs
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\obj\Debug\net10.0-windows\EXERCICE.csproj.CoreCompileInputs.cache
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\obj\Debug\net10.0-windows\EXERCICE.dll
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\obj\Debug\net10.0-windows\refint\EXERCICE.dll
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\obj\Debug\net10.0-windows\EXERCICE.pdb
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\obj\Debug\net10.0-windows\EXERCICE.genruntimeconfig.cache
+D:\LANGAGE L3\ASP.NET\EXERCICE\EXERCICE\obj\Debug\net10.0-windows\ref\EXERCICE.dll
