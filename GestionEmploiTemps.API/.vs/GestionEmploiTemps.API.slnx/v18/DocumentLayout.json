@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|d:\\langage l3\\asp.net\\gestionemploitemps.api\\gestionemploitemps.api\\gestionemploitemps.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|solutionrelative:gestionemploitemps.api\\gestionemploitemps.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|d:\\langage l3\\asp.net\\gestionemploitemps.api\\gestionemploitemps.api\\data\\appbdcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|solutionrelative:gestionemploitemps.api\\data\\appbdcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -35,19 +39,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AppBdContext.cs",
-              "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Data\\AppBdContext.cs",
-              "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Data\\AppBdContext.cs",
-              "ToolTip": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Data\\AppBdContext.cs",
-              "RelativeToolTip": "GestionEmploiTemps.API\\Data\\AppBdContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T00:08:17.963Z",
+              "Title": "GestionEmploiTemps.API.csproj",
+              "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj",
+              "RelativeDocumentMoniker": "GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj",
+              "ToolTip": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj",
+              "RelativeToolTip": "GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj",
+              "ViewState": "AgIAAAkAAAAgZmZmZiYgwBUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-21T12:51:48.421Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AppBdContext.cs",
+              "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Data\\AppBdContext.cs",
+              "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Data\\AppBdContext.cs",
+              "ToolTip": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Data\\AppBdContext.cs",
+              "RelativeToolTip": "GestionEmploiTemps.API\\Data\\AppBdContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T00:08:17.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Matiere.cs",
               "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Matiere.cs",
               "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Models\\Matiere.cs",
@@ -55,12 +71,11 @@
               "RelativeToolTip": "GestionEmploiTemps.API\\Models\\Matiere.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T23:42:19.907Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-20T23:42:19.907Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Niveau.cs",
               "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Niveau.cs",
               "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Models\\Niveau.cs",
@@ -68,12 +83,11 @@
               "RelativeToolTip": "GestionEmploiTemps.API\\Models\\Niveau.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T22:46:11.03Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-20T22:46:11.03Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Enseignant.cs",
               "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Enseignant.cs",
               "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Models\\Enseignant.cs",
@@ -81,12 +95,11 @@
               "RelativeToolTip": "GestionEmploiTemps.API\\Models\\Enseignant.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T22:39:38.555Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-20T22:39:38.555Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Salle.cs",
               "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Salle.cs",
               "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Models\\Salle.cs",
@@ -94,8 +107,7 @@
               "RelativeToolTip": "GestionEmploiTemps.API\\Models\\Salle.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T22:32:20.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-20T22:32:20.504Z"
             }
           ]
         }
