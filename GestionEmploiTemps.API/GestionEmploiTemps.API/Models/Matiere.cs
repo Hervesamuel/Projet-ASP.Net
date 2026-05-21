@@ -1,8 +1,16 @@
-﻿namespace GestionEmploiTemps.API.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace GestionEmploiTemps.API.Models
 {
     public class Matiere
     {
-        public int id_matere{ get; set; }
-        public string nom_matiere{ get; set; }
+        [Key]
+        public int IdMatiere { get; set; }
+
+        [Required]
+        public string Nom { get; set; }
+
+        public ICollection<Enseigner> Enseignants { get; set; }
+        public ICollection<Seance> Seances { get; set; }
     }
 }

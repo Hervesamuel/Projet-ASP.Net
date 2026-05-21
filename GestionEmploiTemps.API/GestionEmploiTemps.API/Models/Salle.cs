@@ -1,10 +1,17 @@
-﻿namespace GestionEmploiTemps.API.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace GestionEmploiTemps.API.Models
 {
     public class Salle
     {
-        public int id_salle { get; set; }
-        public string nom_salle { get; set; }
-        public int capacite { get; set; }
+        [Key]
+        public int IdSalle { get; set; }
 
+        [Required]
+        public string Nom { get; set; }
+
+        public int Capacite { get; set; }
+
+        public ICollection<Seance> Seances { get; set; }
     }
 }
