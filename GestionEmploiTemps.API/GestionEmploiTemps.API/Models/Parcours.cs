@@ -10,15 +10,15 @@ namespace GestionEmploiTemps.API.Models
         public int IdParcours { get; set; }
 
         [Required]
-        public string Nom { get; set; }
+        public required string Nom { get; set; }
 
         // FK
         public int IdNiveau { get; set; }
-
+        [Required]
         [ForeignKey("IdNiveau")]
-        public Niveau Niveau { get; set; }
+        public required Niveau Niveau { get; set; }
 
         // Navigation
-        public ICollection<Seance> Seances { get; set; }
+        public required ICollection<Seance> Seances { get; set; }
     }
 }

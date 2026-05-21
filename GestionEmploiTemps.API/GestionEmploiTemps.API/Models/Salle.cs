@@ -8,10 +8,10 @@ namespace GestionEmploiTemps.API.Models
         public int IdSalle { get; set; }
 
         [Required]
-        public string Nom { get; set; }
+        public required string Nom { get; set; }
 
         public int Capacite { get; set; }
 
-        public ICollection<Seance> Seances { get; set; }
+        public required ICollection<Seance> Seances { get; set; }
     }
 }

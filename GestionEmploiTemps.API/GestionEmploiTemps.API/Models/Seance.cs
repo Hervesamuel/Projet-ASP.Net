@@ -17,18 +17,18 @@ namespace GestionEmploiTemps.API.Models
 
         // Navigation
         [ForeignKey("IdParcours")]
-        public Parcours Parcours { get; set; }
+        public required Parcours Parcours { get; set; }
 
         [ForeignKey("IdMatiere")]
-        public Matiere Matiere { get; set; }
+        public required Matiere Matiere { get; set; }
 
         [ForeignKey("IdEns")]
-        public Enseignant Enseignant { get; set; }
+        public required Enseignant Enseignant { get; set; }
 
         [ForeignKey("IdSalle")]
-        public Salle Salle { get; set; }
+        public required Salle Salle { get; set; }
 
         [ForeignKey("IdCreneau")]
-        public Creneau Creneau { get; set; }
+        public required Creneau Creneau { get; set; }
     }
 }

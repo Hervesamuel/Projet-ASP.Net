@@ -16,7 +16,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 );
 
 // OpenAPI / Swagger (si tu l'utilises)
-builder.Services.AddOpenApi();
+//builder.Services.AddOpenApi();
 
 #endregion
 
@@ -27,7 +27,7 @@ var app = builder.Build();
 // Activer OpenAPI uniquement en mode développement
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+   // app.MapOpenApi();
 }
 
 // 🔷 IMPORTANT : routage des contrôleurs

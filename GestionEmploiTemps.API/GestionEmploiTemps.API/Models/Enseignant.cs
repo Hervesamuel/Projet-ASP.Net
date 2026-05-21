@@ -8,9 +8,9 @@ namespace GestionEmploiTemps.API.Models
         public int IdEns { get; set; }
 
         [Required]
-        public string Nom { get; set; }
+        public required string Nom { get; set; }
 
-        public ICollection<Enseigner> Enseignements { get; set; }
-        public ICollection<Seance> Seances { get; set; }
+        public required ICollection<Enseigner> Enseignements { get; set; }
+        public required ICollection<Seance> Seances { get; set; }
     }
 }

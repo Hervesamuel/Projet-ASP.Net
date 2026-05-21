@@ -10,8 +10,8 @@ namespace GestionEmploiTemps.API.Models
         public int IdNiveau { get; set; }
 
         [Required]
-        public string Nom { get; set; }
+        public required string Nom { get; set; }
 
-        public ICollection<Parcours> Parcours { get; set; }
+        public required ICollection<Parcours> Parcours { get; set; }
     }
 }
