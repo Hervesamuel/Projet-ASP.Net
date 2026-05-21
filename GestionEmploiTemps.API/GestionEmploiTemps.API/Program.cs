@@ -1,21 +1,41 @@
+using Microsoft.EntityFrameworkCore;
+using GestionEmploiTemps.API.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+#region 🔷 CONFIGURATION DES SERVICES
 
+// Ajout des contrôleurs (API MVC)
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+
+// 🔷 CONFIGURATION ENTITY FRAMEWORK CORE + SQL SERVER
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection")
+    )
+);
+
+// OpenAPI / Swagger (si tu l'utilises)
+//builder.Services.AddOpenApi();
+
+#endregion
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+#region 🔷 PIPELINE HTTP
+
+// Activer OpenAPI uniquement en mode développement
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+   // app.MapOpenApi();
 }
 
+// 🔷 IMPORTANT : routage des contrôleurs
+app.MapControllers();
+
+// 🔷 AUTHORIZATION (tu peux garder même si pas encore utilisé)
 app.UseAuthorization();
 
-app.MapControllers();
+#endregion
 
 app.Run();
