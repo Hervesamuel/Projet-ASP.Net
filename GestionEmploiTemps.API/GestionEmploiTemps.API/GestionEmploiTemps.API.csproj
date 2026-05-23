@@ -23,6 +23,7 @@
 		<Folder Include="Controllers\" />
 		<Folder Include="Middlewares\" />
 		<Folder Include="DTOs\" />
+		<Folder Include="Views\" />
 		<Folder Include="Services\" />
 		<Folder Include="Repositories\" />
 	</ItemGroup>
