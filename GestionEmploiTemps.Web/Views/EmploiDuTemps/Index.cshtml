@@ -1,0 +1,160 @@
+﻿@{
+    ViewData["Title"] = "Emploi du Temps";
+}
+
+<div class="bg-white rounded-xl shadow-lg p-6">
+
+    <!-- Titre -->
+    <div class="flex justify-between items-center mb-6">
+        <div>
+            <h1 class="text-3xl font-bold text-blue-900">
+                Emploi du Temps
+            </h1>
+
+            <p class="text-gray-500">
+                Niveau : L3 Informatique — Parcours Génie Logiciel
+            </p>
+        </div>
+
+        <button class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition">
+            + Ajouter
+        </button>
+    </div>
+
+
+    <!-- Tableau -->
+    <div class="overflow-x-auto">
+
+        <table class="w-full border-collapse">
+
+            <thead>
+
+                <tr class="bg-blue-900 text-white">
+
+                    <th class="p-4 border">Horaire</th>
+
+                    <th class="p-4 border">Lundi</th>
+
+                    <th class="p-4 border">Mardi</th>
+
+                    <th class="p-4 border">Mercredi</th>
+
+                    <th class="p-4 border">Jeudi</th>
+
+                    <th class="p-4 border">Vendredi</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr class="text-center hover:bg-gray-100">
+
+                    <td class="border p-3 font-semibold">
+                        08:00 - 10:00
+                    </td>
+
+                    <td class="border p-3">
+
+                        <div class="bg-blue-100 rounded-lg p-2">
+
+                            <strong>Programmation Web</strong>
+
+                            <p class="text-sm text-gray-600">
+                                Salle A1
+                            </p>
+
+                            <p class="text-sm">
+                                M. Rakoto
+                            </p>
+
+                        </div>
+
+                    </td>
+
+                    <td class="border"></td>
+
+                    <td class="border p-3">
+
+                        <div class="bg-indigo-100 rounded-lg p-2">
+
+                            <strong>Base de données</strong>
+
+                            <p class="text-sm text-gray-600">
+                                Salle B2
+                            </p>
+
+                            <p class="text-sm">
+                                Mme Rasoanaivo
+                            </p>
+
+                        </div>
+
+                    </td>
+
+                    <td class="border"></td>
+
+                    <td class="border"></td>
+
+                </tr>
+
+
+
+                <tr class="text-center hover:bg-gray-100">
+
+                    <td class="border p-3 font-semibold">
+                        10:00 - 12:00
+                    </td>
+
+                    <td class="border"></td>
+
+                    <td class="border p-3">
+
+                        <div class="bg-cyan-100 rounded-lg p-2">
+
+                            <strong>Réseaux</strong>
+
+                            <p class="text-sm text-gray-600">
+                                Salle C1
+                            </p>
+
+                            <p class="text-sm">
+                                M. Jean
+                            </p>
+
+                        </div>
+
+                    </td>
+
+                    <td class="border"></td>
+
+                    <td class="border p-3">
+
+                        <div class="bg-blue-100 rounded-lg p-2">
+
+                            <strong>Architecture Logicielle</strong>
+
+                            <p class="text-sm text-gray-600">
+                                Salle A3
+                            </p>
+
+                            <p class="text-sm">
+                                M. Paul
+                            </p>
+
+                        </div>
+
+                    </td>
+
+                    <td class="border"></td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
