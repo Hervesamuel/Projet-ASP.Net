@@ -3,8 +3,8 @@ using System;
 using GestionEmploiTemps.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -17,28 +17,28 @@ namespace GestionEmploiTemps.API.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+                .HasAnnotation("ProductVersion", "8.0.11")
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("GestionEmploiTemps.API.Models.Creneau", b =>
                 {
                     b.Property<int>("IdCreneau")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCreneau"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdCreneau"));
 
                     b.Property<TimeSpan>("HeureDebut")
-                        .HasColumnType("time");
+                        .HasColumnType("interval");
 
                     b.Property<TimeSpan>("HeureFin")
-                        .HasColumnType("time");
+                        .HasColumnType("interval");
 
                     b.Property<string>("Jour")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("IdCreneau");
 
@@ -49,13 +49,13 @@ namespace GestionEmploiTemps.API.Migrations
                 {
                     b.Property<int>("IdEns")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdEns"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdEns"));
 
                     b.Property<string>("Nom")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("IdEns");
 
@@ -65,16 +65,16 @@ namespace GestionEmploiTemps.API.Migrations
             modelBuilder.Entity("GestionEmploiTemps.API.Models.Enseigner", b =>
                 {
                     b.Property<int>("IdEns")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<int>("IdMatiere")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<int>("EnseignantIdEns")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<int>("MatiereIdMatiere")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.HasKey("IdEns", "IdMatiere");
 
@@ -82,20 +82,20 @@ namespace GestionEmploiTemps.API.Migrations
 
                     b.HasIndex("MatiereIdMatiere");
 
-                    b.ToTable("Enseigners");
+                    b.ToTable("Enseignements");
                 });
 
             modelBuilder.Entity("GestionEmploiTemps.API.Models.Matiere", b =>
                 {
                     b.Property<int>("IdMatiere")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdMatiere"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdMatiere"));
 
                     b.Property<string>("Nom")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("IdMatiere");
 
@@ -106,13 +106,13 @@ namespace GestionEmploiTemps.API.Migrations
                 {
                     b.Property<int>("IdNiveau")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdNiveau"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdNiveau"));
 
                     b.Property<string>("Nom")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("IdNiveau");
 
@@ -123,16 +123,16 @@ namespace GestionEmploiTemps.API.Migrations
                 {
                     b.Property<int>("IdParcours")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdParcours"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdParcours"));
 
                     b.Property<int>("IdNiveau")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<string>("Nom")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("IdParcours");
 
@@ -145,16 +145,16 @@ namespace GestionEmploiTemps.API.Migrations
                 {
                     b.Property<int>("IdSalle")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdSalle"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdSalle"));
 
                     b.Property<int>("Capacite")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<string>("Nom")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("IdSalle");
 
@@ -165,26 +165,31 @@ namespace GestionEmploiTemps.API.Migrations
                 {
                     b.Property<int>("IdSeance")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdSeance"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdSeance"));
+
+                    b.Property<int?>("EnseignantIdEns")
+                        .HasColumnType("integer");
 
                     b.Property<int>("IdCreneau")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<int>("IdEns")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<int>("IdMatiere")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<int>("IdParcours")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<int>("IdSalle")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.HasKey("IdSeance");
+
+                    b.HasIndex("EnseignantIdEns");
 
                     b.HasIndex("IdCreneau");
 
@@ -231,6 +236,10 @@ namespace GestionEmploiTemps.API.Migrations
 
             modelBuilder.Entity("GestionEmploiTemps.API.Models.Seance", b =>
                 {
+                    b.HasOne("GestionEmploiTemps.API.Models.Enseignant", null)
+                        .WithMany("Seances")
+                        .HasForeignKey("EnseignantIdEns");
+
                     b.HasOne("GestionEmploiTemps.API.Models.Creneau", "Creneau")
                         .WithMany("Seances")
                         .HasForeignKey("IdCreneau")
@@ -238,7 +247,7 @@ namespace GestionEmploiTemps.API.Migrations
                         .IsRequired();
 
                     b.HasOne("GestionEmploiTemps.API.Models.Enseignant", "Enseignant")
-                        .WithMany("Seances")
+                        .WithMany()
                         .HasForeignKey("IdEns")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
