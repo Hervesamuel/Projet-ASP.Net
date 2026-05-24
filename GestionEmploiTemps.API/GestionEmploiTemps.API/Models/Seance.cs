@@ -8,14 +8,16 @@ namespace GestionEmploiTemps.API.Models
         [Key]
         public int IdSeance { get; set; }
 
-        // FK
+        // Clés étrangères (FK)
+
         public int IdParcours { get; set; }
         public int IdMatiere { get; set; }
         public int IdEns { get; set; }
         public int IdSalle { get; set; }
         public int IdCreneau { get; set; }
 
-        // Navigation
+        // Navigation vers les autres entités
+
         [ForeignKey("IdParcours")]
         public required Parcours Parcours { get; set; }
 

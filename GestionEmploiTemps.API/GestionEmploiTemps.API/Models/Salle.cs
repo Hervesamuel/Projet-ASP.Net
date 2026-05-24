@@ -10,6 +10,7 @@ namespace GestionEmploiTemps.API.Models
         [Required]
         public required string Nom { get; set; }
 
+        [Required]
         public int Capacite { get; set; }
 
         public required ICollection<Seance> Seances { get; set; }
