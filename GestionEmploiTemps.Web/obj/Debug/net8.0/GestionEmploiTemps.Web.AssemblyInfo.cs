@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestionEmploiTemps.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7aa02514ecd8fd5b4d22d36bab67fce825427fbe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e45bc2bbaf40b0bff7b01090e9d5b5a059d68917")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestionEmploiTemps.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestionEmploiTemps.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
