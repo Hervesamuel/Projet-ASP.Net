@@ -1,0 +1,229 @@
+﻿@{
+    ViewData["Title"] = "Gestion Séances";
+}
+
+<div class="bg-white rounded-xl shadow-lg p-6">
+
+    <!-- Titre -->
+
+    <div class="flex justify-between items-center mb-6">
+
+        <div>
+
+            <h1 class="text-3xl font-bold text-blue-900">
+
+                Gestion des Séances
+
+            </h1>
+
+            <p class="text-gray-500">
+
+                Gestion des séances d'enseignement
+
+            </p>
+
+        </div>
+
+        <button class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+
+            + Nouvelle Séance
+
+        </button>
+
+    </div>
+
+
+
+    <!-- Formulaire -->
+
+    <div class="bg-gray-50 p-6 rounded-lg mb-8">
+
+        <h2 class="text-xl font-bold text-blue-900 mb-4">
+
+            Ajouter une Séance
+
+        </h2>
+
+
+        <form>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <!-- Parcours -->
+
+                <div>
+
+                    <label class="block mb-2 font-medium">
+
+                        Parcours
+
+                    </label>
+
+                    <select class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900">
+
+                        <option>Sélectionner un parcours</option>
+                        <option>Génie Logiciel</option>
+                        <option>Réseaux</option>
+                        <option>Base de Données</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Matière -->
+
+                <div>
+
+                    <label class="block mb-2 font-medium">
+
+                        Matière
+
+                    </label>
+
+                    <select class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900">
+
+                        <option>Sélectionner une matière</option>
+                        <option>Programmation Web</option>
+                        <option>Base de Données</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Enseignant -->
+
+                <div>
+
+                    <label class="block mb-2 font-medium">
+
+                        Enseignant
+
+                    </label>
+
+                    <select class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900">
+
+                        <option>Sélectionner un enseignant</option>
+                        <option>Rakoto Jean</option>
+                        <option>Rasoanaivo Marie</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Salle -->
+
+                <div>
+
+                    <label class="block mb-2 font-medium">
+
+                        Salle
+
+                    </label>
+
+                    <select class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900">
+
+                        <option>Sélectionner une salle</option>
+                        <option>Salle A101</option>
+                        <option>Salle B204</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Créneau -->
+
+                <div>
+
+                    <label class="block mb-2 font-medium">
+
+                        Créneau
+
+                    </label>
+
+                    <select class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900">
+
+                        <option>Sélectionner un créneau</option>
+                        <option>Lundi | 08:00 - 10:00</option>
+                        <option>Mardi | 10:00 - 12:00</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <button class="mt-6 bg-blue-900 text-white px-5 py-3 rounded-lg hover:bg-blue-700">
+
+                Enregistrer
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+
+    <!-- Tableau -->
+
+    <div class="overflow-x-auto">
+
+        <table class="w-full">
+
+            <thead>
+
+                <tr class="bg-blue-900 text-white">
+
+                    <th class="p-3 border">Parcours</th>
+                    <th class="p-3 border">Matière</th>
+                    <th class="p-3 border">Enseignant</th>
+                    <th class="p-3 border">Salle</th>
+                    <th class="p-3 border">Créneau</th>
+                    <th class="p-3 border">Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr class="text-center hover:bg-gray-100">
+
+                    
+                    <td class="border p-3">Génie Logiciel</td>
+                    <td class="border p-3">Programmation Web</td>
+                    <td class="border p-3">Rakoto Jean</td>
+                    <td class="border p-3">Salle A101</td>
+                    <td class="border p-3">Lundi 08:00-10:00</td>
+
+                    <td class="border p-3">
+
+                        <button class="bg-blue-700 text-white px-3 py-1 rounded">
+
+                            Modifier
+
+                        </button>
+
+                        <button class="bg-red-600 text-white px-3 py-1 rounded ml-2">
+
+                            Supprimer
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+

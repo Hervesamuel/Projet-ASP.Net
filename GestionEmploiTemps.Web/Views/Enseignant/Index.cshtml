@@ -1,0 +1,180 @@
+﻿@{
+    ViewData["Title"] = "Gestion Enseignants";
+}
+
+<div class="bg-white rounded-xl shadow-lg p-6">
+
+    <!-- Titre -->
+    <div class="flex justify-between items-center mb-6">
+
+        <div>
+            <h1 class="text-3xl font-bold text-blue-900">
+                Gestion des Enseignants
+            </h1>
+
+            <p class="text-gray-500">
+                Ajouter et gérer les enseignants
+            </p>
+        </div>
+
+        <button class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+            + Nouvel Enseignant
+        </button>
+
+    </div>
+
+
+
+    <!-- Formulaire -->
+
+    <div class="bg-gray-50 p-6 rounded-lg mb-8">
+
+        <h2 class="text-xl font-bold text-blue-900 mb-4">
+            Ajouter un Enseignant
+        </h2>
+
+        <form>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <!-- Nom -->
+
+                <div>
+                    <label class="block mb-2 font-medium">
+                        Nom
+                    </label>
+
+                    <input type="text"
+                           placeholder="Entrer le nom"
+                           class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900 outline-none" />
+                </div>
+
+
+                <!-- Prénom -->
+
+                <div>
+                    <label class="block mb-2 font-medium">
+                        Prénom
+                    </label>
+
+                    <input type="text"
+                           placeholder="Entrer le prénom"
+                           class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900 outline-none" />
+                </div>
+
+
+                <!-- Email -->
+
+                <div>
+                    <label class="block mb-2 font-medium">
+                        Email
+                    </label>
+
+                    <input type="email"
+                           placeholder="Entrer l'email"
+                           class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900 outline-none" />
+                </div>
+
+
+                <!-- Téléphone -->
+
+                <div>
+                    <label class="block mb-2 font-medium">
+                        Téléphone
+                    </label>
+
+                    <input type="text"
+                           placeholder="Entrer le téléphone"
+                           class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900 outline-none" />
+                </div>
+
+
+                <!-- Matière -->
+
+                <div>
+                    <label class="block mb-2 font-medium">
+                        Matière enseignée
+                    </label>
+
+                    <select class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900 outline-none">
+
+                        <option>Sélectionner une matière</option>
+                        <option>Programmation Web</option>
+                        <option>Base de données</option>
+                        <option>Réseaux</option>
+                        <option>Génie Logiciel</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <button class="mt-6 bg-blue-900 text-white px-5 py-3 rounded-lg hover:bg-blue-700">
+
+                Enregistrer
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+
+    <!-- Tableau enseignants -->
+
+    <div class="overflow-x-auto">
+
+        <table class="w-full">
+
+            <thead>
+
+                <tr class="bg-blue-900 text-white">
+
+                  
+                    <th class="p-3 border">Nom</th>
+                    <th class="p-3 border">Prénom</th>
+                    <th class="p-3 border">Email</th>
+                    <th class="p-3 border">Téléphone</th>
+                    <th class="p-3 border">Matière</th>
+                    <th class="p-3 border">Actions</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr class="text-center hover:bg-gray-100">
+
+               
+                    <td class="border p-3">Rakoto</td>
+                    <td class="border p-3">Jean</td>
+                    <td class="border p-3">jean@gmail.com</td>
+                    <td class="border p-3">0341234567</td>
+                    <td class="border p-3">Programmation Web</td>
+
+                    <td class="border p-3">
+
+                        <button class="bg-blue-700 text-white px-3 py-1 rounded">
+                            Modifier
+                        </button>
+
+                        <button class="bg-red-600 text-white px-3 py-1 rounded ml-2">
+                            Supprimer
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

@@ -1,7 +1,16 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\",
   "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|d:\\langage l3\\asp.net\\gestionemploitemps.api\\gestionemploitemps.api\\models\\enseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|solutionrelative:gestionemploitemps.api\\models\\enseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|d:\\langage l3\\asp.net\\gestionemploitemps.api\\gestionemploitemps.api\\models\\enseigner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|solutionrelative:gestionemploitemps.api\\models\\enseigner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
     {
       "AbsoluteMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|d:\\langage l3\\asp.net\\gestionemploitemps.api\\gestionemploitemps.api\\models\\salle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|solutionrelative:gestionemploitemps.api\\models\\salle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -17,14 +26,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|d:\\langage l3\\asp.net\\gestionemploitemps.api\\gestionemploitemps.api\\models\\creneau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|solutionrelative:gestionemploitemps.api\\models\\creneau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|d:\\langage l3\\asp.net\\gestionemploitemps.api\\gestionemploitemps.api\\models\\enseigner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|solutionrelative:gestionemploitemps.api\\models\\enseigner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|d:\\langage l3\\asp.net\\gestionemploitemps.api\\gestionemploitemps.api\\models\\enseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|solutionrelative:gestionemploitemps.api\\models\\enseignant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|d:\\langage l3\\asp.net\\gestionemploitemps.api\\gestionemploitemps.api\\models\\niveau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -67,10 +68,15 @@
       "RelativeMoniker": "D:0:0:{2FFC08DA-5BF4-295F-E300-58F3E9A7D60A}|GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj|solutionrelative:gestionemploitemps.api\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
+=======
+  "WorkspaceRootPath": "D:\\ProjetASP.NET\\Projet-ASP.Net\\GestionEmploiTemps.API\\",
+  "Documents": [],
+>>>>>>> 527b5e45766b36ef048086af7907f282a3290416
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
+<<<<<<< HEAD
       "DocumentGroups": [
         {
           "DockedWidth": 200,
@@ -79,58 +85,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Seance.cs",
-              "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Seance.cs",
-              "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Models\\Seance.cs",
-              "ToolTip": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Seance.cs*",
-              "RelativeToolTip": "GestionEmploiTemps.API\\Models\\Seance.cs*",
-              "ViewState": "AgIAAAUAAABgmZmZmbk6wAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T20:28:52.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Salle.cs",
-              "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Salle.cs",
-              "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Models\\Salle.cs",
-              "ToolTip": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Salle.cs*",
-              "RelativeToolTip": "GestionEmploiTemps.API\\Models\\Salle.cs*",
-              "ViewState": "AgIAAAEAAAAAMzMzMzMrwAwAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T22:32:20.504Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Matiere.cs",
-              "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Matiere.cs",
-              "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Models\\Matiere.cs",
-              "ToolTip": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Matiere.cs",
-              "RelativeToolTip": "GestionEmploiTemps.API\\Models\\Matiere.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T23:42:19.907Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Creneau.cs",
-              "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Creneau.cs",
-              "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Models\\Creneau.cs",
-              "ToolTip": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Creneau.cs",
-              "RelativeToolTip": "GestionEmploiTemps.API\\Models\\Creneau.cs",
-              "ViewState": "AgIAAAQAAAAEAAAAAMA3wAwAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T20:50:32.478Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Enseigner.cs",
               "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Enseigner.cs",
               "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Models\\Enseigner.cs",
@@ -143,15 +97,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "Enseignant.cs",
               "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Enseignant.cs",
               "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Models\\Enseignant.cs",
               "ToolTip": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Enseignant.cs",
               "RelativeToolTip": "GestionEmploiTemps.API\\Models\\Enseignant.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-20T22:39:38.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Salle.cs",
+              "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Salle.cs",
+              "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Models\\Salle.cs",
+              "ToolTip": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Salle.cs",
+              "RelativeToolTip": "GestionEmploiTemps.API\\Models\\Salle.cs",
+              "ViewState": "AgIAAAEAAAAAMzMzMzMrwAwAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T22:32:20.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Seance.cs",
+              "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Seance.cs",
+              "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Models\\Seance.cs",
+              "ToolTip": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Seance.cs",
+              "RelativeToolTip": "GestionEmploiTemps.API\\Models\\Seance.cs",
+              "ViewState": "AgIAAAUAAABgmZmZmbk6wAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-24T20:28:52.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Matiere.cs",
+              "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Matiere.cs",
+              "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Models\\Matiere.cs",
+              "ToolTip": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Matiere.cs",
+              "RelativeToolTip": "GestionEmploiTemps.API\\Models\\Matiere.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T23:42:19.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Creneau.cs",
+              "DocumentMoniker": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Creneau.cs",
+              "RelativeDocumentMoniker": "GestionEmploiTemps.API\\Models\\Creneau.cs",
+              "ToolTip": "D:\\LANGAGE L3\\ASP.NET\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\Models\\Creneau.cs",
+              "RelativeToolTip": "GestionEmploiTemps.API\\Models\\Creneau.cs",
+              "ViewState": "AgIAAAQAAAAEAAAAAMA3wAwAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T20:50:32.478Z",
               "EditorCaption": ""
             },
             {
@@ -278,6 +284,9 @@
           ]
         }
       ]
+=======
+      "DocumentGroups": []
+>>>>>>> 527b5e45766b36ef048086af7907f282a3290416
     }
   ]
 }

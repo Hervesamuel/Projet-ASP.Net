@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Emploi du Temps</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+        theme: {
+        extend: {
+        colors: {
+        primary: '#0b1f3a',   // bleu marine
+        dark: '#08162b',      // bleu foncé
+        accent: '#1e3a8a'     // bleu profond
+        }
+        }
+        }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    <!-- NAVBAR -->
+    <header class="bg-primary text-white shadow-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+
+            <h1 class="text-xl font-bold">📅 Emploi du Temps</h1>
+
+            <nav class="space-x-6 font-medium">
+                <a href="/" class="hover:text-blue-300">Accueil</a>
+                <a href="/EmploiDuTemps" class="hover:text-blue-300">Emploi du temps</a>
+                <a href="/Enseignant" class="hover:text-blue-300">Enseignants</a>
+                <a href="/Salle" class="hover:text-blue-300">Salles</a>
+                <a href="/Matiere" class="hover:text-blue-300"> Matières </a>
+                <a href="/Seance" class="hover:text-blue-300"> Séances </a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="flex-1 max-w-7xl mx-auto w-full p-6">
+        @RenderBody()
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center p-4 mt-6">
+        <p class="text-sm">© 2026 - Gestion Emploi du Temps</p>
+        <p class="text-xs opacity-80">Développé avec 💙 en ASP.NET + Tailwind</p>
+    </footer>
+
+</body>
+</html>

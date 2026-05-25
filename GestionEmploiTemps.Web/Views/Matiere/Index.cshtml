@@ -1,0 +1,155 @@
+﻿@{
+    ViewData["Title"] = "Gestion Matières";
+}
+
+<div class="bg-white rounded-xl shadow-lg p-6">
+
+    <!-- Titre -->
+    <div class="flex justify-between items-center mb-6">
+
+        <div>
+
+            <h1 class="text-3xl font-bold text-blue-900">
+                Gestion des Matières
+            </h1>
+
+            <p class="text-gray-500">
+                Ajouter et gérer les matières
+            </p>
+
+        </div>
+
+        <button class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+
+            + Nouvelle Matière
+
+        </button>
+
+    </div>
+
+
+    <!-- Formulaire -->
+
+    <div class="bg-gray-50 p-6 rounded-lg mb-8">
+
+        <h2 class="text-xl font-bold text-blue-900 mb-4">
+
+            Ajouter une Matière
+
+        </h2>
+
+        <form>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <div>
+
+                    <label class="block mb-2 font-medium">
+
+                        Nom Matière
+
+                    </label>
+
+                    <input type="text"
+                           placeholder="Ex : Programmation Web"
+                           class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900 outline-none" />
+
+                </div>
+
+            </div>
+
+
+            <button class="mt-6 bg-blue-900 text-white px-5 py-3 rounded-lg hover:bg-blue-700">
+
+                Enregistrer
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- Tableau -->
+
+    <div class="overflow-x-auto">
+
+        <table class="w-full">
+
+            <thead>
+
+                <tr class="bg-blue-900 text-white">
+
+
+                    <th class="p-3 border">
+                        Nom Matière
+                    </th>
+
+                    <th class="p-3 border">
+                        Actions
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr class="text-center hover:bg-gray-100">
+
+               
+
+                    <td class="border p-3">
+                        Programmation Web
+                    </td>
+
+                    <td class="border p-3">
+
+                        <button class="bg-blue-700 text-white px-3 py-1 rounded">
+
+                            Modifier
+
+                        </button>
+
+                        <button class="bg-red-600 text-white px-3 py-1 rounded ml-2">
+
+                            Supprimer
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+
+                <tr class="text-center hover:bg-gray-100">
+
+                    <td class="border p-3">
+                        Base de Données
+                    </td>
+
+                    <td class="border p-3">
+
+                        <button class="bg-blue-700 text-white px-3 py-1 rounded">
+
+                            Modifier
+
+                        </button>
+
+                        <button class="bg-red-600 text-white px-3 py-1 rounded ml-2">
+
+                            Supprimer
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
