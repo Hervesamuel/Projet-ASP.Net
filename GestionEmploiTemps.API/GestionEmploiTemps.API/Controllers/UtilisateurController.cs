@@ -11,9 +11,9 @@ namespace GestionEmploiTemps.API.Controllers
     [ApiController]
     public class UtilisateurController : ControllerBase
     {
-        private readonly AppBdContext _context;
+        private readonly AppDbContext _context;
 
-        public UtilisateurController(AppBdContext context)
+        public UtilisateurController(AppDbContext context)
         {
             _context = context;
         }

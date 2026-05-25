@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../GestionEmploiTemps.API/GestionEmploiTemps.API/GestionEmploiTemps.API.csproj" />
+  <Project Path="../GestionEmploiTemps.Web/GestionEmploiTemps.Web.csproj" />
+</Solution>

@@ -12,9 +12,9 @@ namespace GestionEmploiTemps.API.Controllers
 	[ApiController]
 	public class ParcoursController : ControllerBase
 	{
-		private readonly AppBdContext _context;
+		private readonly AppDbContext _context;
 
-		public ParcoursController(AppBdContext context)
+		public ParcoursController(AppDbContext context)
 		{
 			_context = context;
 		}

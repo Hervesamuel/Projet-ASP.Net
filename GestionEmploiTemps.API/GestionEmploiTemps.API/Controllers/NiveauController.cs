@@ -12,9 +12,9 @@ namespace GestionEmploiTemps.API.Controllers
     [ApiController]
     public class NiveauController : ControllerBase
     {
-        private readonly AppBdContext _context;
+        private readonly AppDbContext _context;
 
-        public NiveauController(AppBdContext context)
+        public NiveauController(AppDbContext context)
         {
             _context = context;
         }

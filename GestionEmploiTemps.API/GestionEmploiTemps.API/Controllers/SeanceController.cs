@@ -11,9 +11,9 @@ namespace GestionEmploiTemps.API.Controllers
     [ApiController]
     public class SeanceController : ControllerBase
     {
-        private readonly AppBdContext _context;
+        private readonly AppDbContext _context;
 
-        public SeanceController(AppBdContext context)
+        public SeanceController(AppDbContext context)
         {
             _context = context;
         }

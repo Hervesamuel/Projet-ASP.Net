@@ -12,10 +12,10 @@ namespace GestionEmploiTemps.API.Controllers
     [ApiController]
     public class EnseignerController : ControllerBase
     {
-        private readonly AppBdContext _context;
+        private readonly AppDbContext _context;
 
         // Injection du DbContext
-        public EnseignerController(AppBdContext context)
+        public EnseignerController(AppDbContext context)
         {
             _context = context;
         }

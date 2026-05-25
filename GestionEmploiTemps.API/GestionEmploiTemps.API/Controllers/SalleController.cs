@@ -11,9 +11,9 @@ namespace GestionEmploiTemps.API.Controllers
     [ApiController]
     public class SalleController : ControllerBase
     {
-        private readonly AppBdContext _context;
+        private readonly AppDbContext _context;
 
-        public SalleController(AppBdContext context)
+        public SalleController(AppDbContext context)
         {
             _context = context;
         }

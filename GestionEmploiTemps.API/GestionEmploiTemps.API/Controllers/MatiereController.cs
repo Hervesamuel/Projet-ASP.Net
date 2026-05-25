@@ -12,9 +12,9 @@ namespace GestionEmploiTemps.API.Controllers
     [ApiController]
     public class MatiereController : ControllerBase
     {
-        private readonly AppBdContext _context;
+        private readonly AppDbContext _context;
 
-        public MatiereController(AppBdContext context)
+        public MatiereController(AppDbContext context)
         {
             _context = context;
         }

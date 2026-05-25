@@ -12,10 +12,10 @@ namespace GestionEmploiTemps.API.Controllers
 	[ApiController]
 	public class CreneauController : ControllerBase
 	{
-		private readonly AppBdContext _context;
+		private readonly AppDbContext _context;
 
 		// Injection du DbContext
-		public CreneauController(AppBdContext context)
+		public CreneauController(AppDbContext context)
 		{
 			_context = context;
 		}
