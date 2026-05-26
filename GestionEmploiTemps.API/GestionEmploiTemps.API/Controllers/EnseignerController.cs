@@ -26,7 +26,7 @@ namespace GestionEmploiTemps.API.Controllers
         {
             try
             {
-                var enseignements = await _context.Enseigners
+                var enseignements = await _context.Enseignements 
                     .Include(e => e.Enseignant)
                     .Include(e => e.Matiere)
                     .ToListAsync();
@@ -50,7 +50,7 @@ namespace GestionEmploiTemps.API.Controllers
         {
             try
             {
-                var enseignement = await _context.Enseigners
+                var enseignement = await _context.Enseignements 
                     .Include(e => e.Enseignant)
                     .Include(e => e.Matiere)
                     .FirstOrDefaultAsync(e =>
@@ -85,7 +85,7 @@ namespace GestionEmploiTemps.API.Controllers
                     return BadRequest(ModelState);
                 }
 
-                bool existe = await _context.Enseigners
+                bool existe = await _context.Enseignements 
                     .AnyAsync(e =>
                         e.IdEns == enseignement.IdEns &&
                         e.IdMatiere == enseignement.IdMatiere);
@@ -97,7 +97,7 @@ namespace GestionEmploiTemps.API.Controllers
                     );
                 }
 
-                await _context.Enseigners
+                await _context.Enseignements
                     .AddAsync(enseignement);
 
                 await _context.SaveChangesAsync();
@@ -123,7 +123,7 @@ namespace GestionEmploiTemps.API.Controllers
         {
             try
             {
-                var enseignement = await _context.Enseigners
+                var enseignement = await _context.Enseignements
                     .FirstOrDefaultAsync(e =>
                         e.IdEns == idEns &&
                         e.IdMatiere == idMatiere);
@@ -135,7 +135,7 @@ namespace GestionEmploiTemps.API.Controllers
                     );
                 }
 
-                _context.Enseigners
+                _context.Enseignements
                     .Remove(enseignement);
 
                 await _context.SaveChangesAsync();

@@ -18,6 +18,8 @@ namespace GestionEmploiTemps.API.Data
         public DbSet<Creneau> Creneaux { get; set; }
         public DbSet<Enseigner> Enseignements { get; set; }
         public DbSet<Seance> Seances { get; set; }
+        public DbSet<Utilisateur> Utilisateurs { get; set; }
+       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

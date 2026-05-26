@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -16,11 +15,11 @@ namespace GestionEmploiTemps.API.Migrations
                 name: "Creneaux",
                 columns: table => new
                 {
-                    IdCreneau = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Jour = table.Column<string>(type: "text", nullable: false),
-                    HeureDebut = table.Column<TimeSpan>(type: "interval", nullable: false),
-                    HeureFin = table.Column<TimeSpan>(type: "interval", nullable: false)
+                    IdCreneau = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Jour = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HeureDebut = table.Column<TimeSpan>(type: "time", nullable: false),
+                    HeureFin = table.Column<TimeSpan>(type: "time", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -31,9 +30,9 @@ namespace GestionEmploiTemps.API.Migrations
                 name: "Enseignants",
                 columns: table => new
                 {
-                    IdEns = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Nom = table.Column<string>(type: "text", nullable: false)
+                    IdEns = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nom = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -44,9 +43,9 @@ namespace GestionEmploiTemps.API.Migrations
                 name: "Matieres",
                 columns: table => new
                 {
-                    IdMatiere = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Nom = table.Column<string>(type: "text", nullable: false)
+                    IdMatiere = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nom = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -57,9 +56,9 @@ namespace GestionEmploiTemps.API.Migrations
                 name: "Niveaux",
                 columns: table => new
                 {
-                    IdNiveau = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Nom = table.Column<string>(type: "text", nullable: false)
+                    IdNiveau = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nom = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -70,10 +69,10 @@ namespace GestionEmploiTemps.API.Migrations
                 name: "Salles",
                 columns: table => new
                 {
-                    IdSalle = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Nom = table.Column<string>(type: "text", nullable: false),
-                    Capacite = table.Column<int>(type: "integer", nullable: false)
+                    IdSalle = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nom = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Capacite = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -81,13 +80,31 @@ namespace GestionEmploiTemps.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Utilisateurs",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nom = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Prenom = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MotDePasse = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DateCreation = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Utilisateurs", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Enseignements",
                 columns: table => new
                 {
-                    IdEns = table.Column<int>(type: "integer", nullable: false),
-                    IdMatiere = table.Column<int>(type: "integer", nullable: false),
-                    EnseignantIdEns = table.Column<int>(type: "integer", nullable: false),
-                    MatiereIdMatiere = table.Column<int>(type: "integer", nullable: false)
+                    IdEns = table.Column<int>(type: "int", nullable: false),
+                    IdMatiere = table.Column<int>(type: "int", nullable: false),
+                    EnseignantIdEns = table.Column<int>(type: "int", nullable: false),
+                    MatiereIdMatiere = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -110,10 +127,10 @@ namespace GestionEmploiTemps.API.Migrations
                 name: "Parcours",
                 columns: table => new
                 {
-                    IdParcours = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Nom = table.Column<string>(type: "text", nullable: false),
-                    IdNiveau = table.Column<int>(type: "integer", nullable: false)
+                    IdParcours = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nom = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IdNiveau = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -130,14 +147,14 @@ namespace GestionEmploiTemps.API.Migrations
                 name: "Seances",
                 columns: table => new
                 {
-                    IdSeance = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    IdParcours = table.Column<int>(type: "integer", nullable: false),
-                    IdMatiere = table.Column<int>(type: "integer", nullable: false),
-                    IdEns = table.Column<int>(type: "integer", nullable: false),
-                    IdSalle = table.Column<int>(type: "integer", nullable: false),
-                    IdCreneau = table.Column<int>(type: "integer", nullable: false),
-                    EnseignantIdEns = table.Column<int>(type: "integer", nullable: true)
+                    IdSeance = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdParcours = table.Column<int>(type: "int", nullable: false),
+                    IdMatiere = table.Column<int>(type: "int", nullable: false),
+                    IdEns = table.Column<int>(type: "int", nullable: false),
+                    IdSalle = table.Column<int>(type: "int", nullable: false),
+                    IdCreneau = table.Column<int>(type: "int", nullable: false),
+                    EnseignantIdEns = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -233,6 +250,9 @@ namespace GestionEmploiTemps.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Seances");
+
+            migrationBuilder.DropTable(
+                name: "Utilisateurs");
 
             migrationBuilder.DropTable(
                 name: "Creneaux");

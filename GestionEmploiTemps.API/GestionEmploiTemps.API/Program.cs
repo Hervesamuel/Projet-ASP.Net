@@ -9,11 +9,20 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // DB Context
-builder.Services.AddDbContext<AppBdContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+if (string.IsNullOrWhiteSpace(connectionString))
+{
+    throw new Exception("❌ Connection string manquante dans appsettings.Development.json");
+}
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection")
+    )
 );
 
-// CORS (important pour MVC)
+// CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowWeb",
@@ -36,8 +45,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowWeb");
 
+app.UseHttpsRedirection();
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
