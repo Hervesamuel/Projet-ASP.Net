@@ -1,0 +1,21 @@
+﻿@model GestionEmploiTemps.Web.Models.Enseignant
+
+@{
+    ViewData["Title"] = "Supprimer Enseignant";
+}
+
+<h2>Confirmer la suppression</h2>
+
+<p>Voulez-vous supprimer : <strong>@Model.Nom</strong> ?</p>
+
+<form method="post" asp-action="Delete">
+
+    <input type="hidden" asp-for="IdEns" />
+
+    <button type="submit" class="bg-red-600 text-white px-4 py-2">
+        Oui, supprimer
+    </button>
+
+    <a asp-action="Index" class="ml-3">Annuler</a>
+
+</form>

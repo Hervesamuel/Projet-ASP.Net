@@ -1,0 +1,22 @@
+﻿@model GestionEmploiTemps.Web.Models.Enseignant
+
+@{
+    ViewData["Title"] = "Modifier Enseignant";
+}
+
+<h2>Modifier Enseignant</h2>
+
+<form method="post" asp-action="Edit">
+
+    <input type="hidden" asp-for="IdEns" />
+
+    <div>
+        <label>Nom</label>
+        <input asp-for="Nom" class="border p-2 w-full" />
+    </div>
+
+    <button type="submit" class="bg-blue-900 text-white px-4 py-2 mt-3">
+        Modifier
+    </button>
+
+</form>

@@ -27,6 +27,14 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG9pRHVUZW1wc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/Enseignant/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5zZWlnbmFudFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/Enseignant/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5zZWlnbmFudFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/Enseignant/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5zZWlnbmFudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

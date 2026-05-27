@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "..\\GestionEmploiTemps.API\\GestionEmploiTemps.API\\GestionEmploiTemps.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\GestionEmploiTemps.Web\\GestionEmploiTemps.Web.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
