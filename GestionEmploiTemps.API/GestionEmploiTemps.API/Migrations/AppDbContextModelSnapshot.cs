@@ -70,15 +70,17 @@ namespace GestionEmploiTemps.API.Migrations
                     b.Property<int>("IdMatiere")
                         .HasColumnType("int");
 
-                    b.Property<int>("EnseignantIdEns")
+                    b.Property<int?>("EnseignantIdEns")
                         .HasColumnType("int");
 
-                    b.Property<int>("MatiereIdMatiere")
+                    b.Property<int?>("MatiereIdMatiere")
                         .HasColumnType("int");
 
                     b.HasKey("IdEns", "IdMatiere");
 
                     b.HasIndex("EnseignantIdEns");
+
+                    b.HasIndex("IdMatiere");
 
                     b.HasIndex("MatiereIdMatiere");
 
@@ -244,17 +246,27 @@ namespace GestionEmploiTemps.API.Migrations
 
             modelBuilder.Entity("GestionEmploiTemps.API.Models.Enseigner", b =>
                 {
-                    b.HasOne("GestionEmploiTemps.API.Models.Enseignant", "Enseignant")
+                    b.HasOne("GestionEmploiTemps.API.Models.Enseignant", null)
                         .WithMany("Enseignements")
-                        .HasForeignKey("EnseignantIdEns")
+                        .HasForeignKey("EnseignantIdEns");
+
+                    b.HasOne("GestionEmploiTemps.API.Models.Enseignant", "Enseignant")
+                        .WithMany()
+                        .HasForeignKey("IdEns")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_Enseigner_Enseignant");
 
                     b.HasOne("GestionEmploiTemps.API.Models.Matiere", "Matiere")
-                        .WithMany("Enseignants")
-                        .HasForeignKey("MatiereIdMatiere")
+                        .WithMany()
+                        .HasForeignKey("IdMatiere")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_Enseigner_Matiere");
+
+                    b.HasOne("GestionEmploiTemps.API.Models.Matiere", null)
+                        .WithMany("Enseignants")
+                        .HasForeignKey("MatiereIdMatiere");
 
                     b.Navigation("Enseignant");
 

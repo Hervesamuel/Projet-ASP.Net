@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GestionEmploiTemps.API.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class FixEnseignerRelation : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -103,8 +103,8 @@ namespace GestionEmploiTemps.API.Migrations
                 {
                     IdEns = table.Column<int>(type: "int", nullable: false),
                     IdMatiere = table.Column<int>(type: "int", nullable: false),
-                    EnseignantIdEns = table.Column<int>(type: "int", nullable: false),
-                    MatiereIdMatiere = table.Column<int>(type: "int", nullable: false)
+                    EnseignantIdEns = table.Column<int>(type: "int", nullable: true),
+                    MatiereIdMatiere = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -113,11 +113,21 @@ namespace GestionEmploiTemps.API.Migrations
                         name: "FK_Enseignements_Enseignants_EnseignantIdEns",
                         column: x => x.EnseignantIdEns,
                         principalTable: "Enseignants",
-                        principalColumn: "IdEns",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "IdEns");
                     table.ForeignKey(
                         name: "FK_Enseignements_Matieres_MatiereIdMatiere",
                         column: x => x.MatiereIdMatiere,
+                        principalTable: "Matieres",
+                        principalColumn: "IdMatiere");
+                    table.ForeignKey(
+                        name: "FK_Enseigner_Enseignant",
+                        column: x => x.IdEns,
+                        principalTable: "Enseignants",
+                        principalColumn: "IdEns",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Enseigner_Matiere",
+                        column: x => x.IdMatiere,
                         principalTable: "Matieres",
                         principalColumn: "IdMatiere",
                         onDelete: ReferentialAction.Cascade);
@@ -200,6 +210,11 @@ namespace GestionEmploiTemps.API.Migrations
                 name: "IX_Enseignements_EnseignantIdEns",
                 table: "Enseignements",
                 column: "EnseignantIdEns");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Enseignements_IdMatiere",
+                table: "Enseignements",
+                column: "IdMatiere");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Enseignements_MatiereIdMatiere",
