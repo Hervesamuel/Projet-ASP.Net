@@ -26,9 +26,19 @@ namespace GestionEmploiTemps.API.Data
             base.OnModelCreating(modelBuilder); //ModelBuilder = configuration avancée EF Core
 
             modelBuilder.Entity<Enseigner>()
-                //.HasKey(...) = définit la clé primaire , exemple : un enseignant + une matière = unique composée
                 .HasKey(e => new { e.IdEns, e.IdMatiere });
 
+            modelBuilder.Entity<Enseigner>()
+                .HasOne(e => e.Enseignant)
+                .WithMany()
+                .HasForeignKey(e => e.IdEns)
+                .HasConstraintName("FK_Enseigner_Enseignant");
+
+            modelBuilder.Entity<Enseigner>()
+                .HasOne(e => e.Matiere)
+                .WithMany()
+                .HasForeignKey(e => e.IdMatiere)
+                .HasConstraintName("FK_Enseigner_Matiere");
 
             // Clé composite pour Enseigner
             modelBuilder.Entity<Seance>()

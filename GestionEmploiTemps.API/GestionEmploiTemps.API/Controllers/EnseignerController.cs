@@ -108,10 +108,7 @@ namespace GestionEmploiTemps.API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(
-                    500,
-                    $"Erreur lors de l'ajout : {ex.Message}"
-                );
+                return StatusCode(500, ex.InnerException?.Message ?? ex.Message);
             }
         }
 

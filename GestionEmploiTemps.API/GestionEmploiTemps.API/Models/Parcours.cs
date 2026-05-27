@@ -1,5 +1,4 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GestionEmploiTemps.API.Models
@@ -10,15 +9,15 @@ namespace GestionEmploiTemps.API.Models
         public int IdParcours { get; set; }
 
         [Required]
-        public required string Nom { get; set; }
+        public string Nom { get; set; } = string.Empty;
 
-        // FK
+        // Clé étrangère
         public int IdNiveau { get; set; }
-        [Required]
+
         [ForeignKey("IdNiveau")]
-        public required Niveau Niveau { get; set; }
+        public Niveau? Niveau { get; set; }
 
         // Navigation
-        public required ICollection<Seance> Seances { get; set; }
+        public List<Seance>? Seances { get; set; }
     }
 }

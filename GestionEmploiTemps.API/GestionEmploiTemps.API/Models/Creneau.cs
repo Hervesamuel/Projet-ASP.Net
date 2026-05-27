@@ -8,12 +8,12 @@ namespace GestionEmploiTemps.API.Models
         public int IdCreneau { get; set; }
 
         [Required]
-        public required string Jour { get; set; }
+        public  string Jour { get; set; } = string.Empty;
 
         public required TimeSpan HeureDebut { get; set; }
 
         public required TimeSpan HeureFin { get; set; }
 
-        public required ICollection<Seance> Seances { get; set; }
+        public List <Seance>? Seances { get; set; }
     }
 }

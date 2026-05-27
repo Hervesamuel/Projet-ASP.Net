@@ -1,6 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Collections.Generic;
-
 
 namespace GestionEmploiTemps.API.Models
 {
@@ -10,8 +8,8 @@ namespace GestionEmploiTemps.API.Models
         public int IdNiveau { get; set; }
 
         [Required]
-        public required string Nom { get; set; }
+        public string Nom { get; set; } = string.Empty;
 
-        public required ICollection<Parcours> Parcours { get; set; }
+        public List<Parcours>? Parcours { get; set; }
     }
 }

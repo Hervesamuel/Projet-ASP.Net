@@ -12,6 +12,6 @@ namespace GestionEmploiTemps.API.Models
 
         public int Capacite { get; set; }
 
-        public required ICollection<Seance> Seances { get; set; }
+        public List<Seance>? Seances { get; set; }
     }
 }
