@@ -1,0 +1,61 @@
+﻿@model GestionEmploiTemps.Web.Models.Salle
+
+@{
+    ViewData["Title"] = "Modifier Salle";
+}
+
+<div class="bg-white rounded-xl shadow-lg p-6 max-w-2xl mx-auto">
+
+    <h1 class="text-3xl font-bold text-blue-900 mb-6">
+        Modifier Salle
+    </h1>
+
+    <form method="post" asp-action="Edit">
+
+        <!-- 🔥 ID caché IMPORTANT -->
+        <input type="hidden" asp-for="IdSalle" />
+
+        <div class="mb-4">
+
+            <label class="block mb-2 font-medium">
+                Nom Salle
+            </label>
+
+            <input asp-for="Nom"
+                   class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900 outline-none" />
+
+        </div>
+
+        <div class="mb-6">
+
+            <label class="block mb-2 font-medium">
+                Capacité
+            </label>
+
+            <input asp-for="Capacite"
+                   type="number"
+                   class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900 outline-none" />
+
+        </div>
+
+        <div class="flex gap-4">
+
+            <button type="submit"
+                    class="bg-blue-900 text-white px-5 py-3 rounded-lg hover:bg-blue-700">
+
+                Enregistrer
+
+            </button>
+
+            <a asp-action="Index"
+               class="bg-gray-500 text-white px-5 py-3 rounded-lg hover:bg-gray-700">
+
+                Retour
+
+            </a>
+
+        </div>
+
+    </form>
+
+</div>

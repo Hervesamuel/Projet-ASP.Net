@@ -1,165 +1,166 @@
-﻿@{
+﻿```cshtml
+@model GestionEmploiTemps.Web.Models.ViewModels.SeanceVM
+
+@{
     ViewData["Title"] = "Gestion Séances";
 }
 
-<div class="bg-white rounded-xl shadow-lg p-6">
+<!-- 🔔 NOTIFICATIONS -->
+@if (TempData["Success"] != null)
+{
+    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+        @TempData["Success"]
+    </div>
+}
 
-    <!-- Titre -->
+@if (TempData["Error"] != null)
+{
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+        @TempData["Error"]
+    </div>
+}
 
-    <div class="flex justify-between items-center mb-6">
+<div class="bg-white rounded-2xl shadow-xl p-8">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center mb-8">
 
         <div>
-
-            <h1 class="text-3xl font-bold text-blue-900">
-
+            <h1 class="text-4xl font-bold text-blue-900">
                 Gestion des Séances
-
             </h1>
 
-            <p class="text-gray-500">
-
-                Gestion des séances d'enseignement
-
+            <p class="text-gray-500 mt-1">
+                Gestion complète des emplois du temps
             </p>
-
         </div>
-
-        <button class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-
-            + Nouvelle Séance
-
-        </button>
 
     </div>
 
+    <!-- FORM -->
+    <div class="bg-gray-50 rounded-xl p-6 mb-10 border">
 
-
-    <!-- Formulaire -->
-
-    <div class="bg-gray-50 p-6 rounded-lg mb-8">
-
-        <h2 class="text-xl font-bold text-blue-900 mb-4">
-
+        <h2 class="text-2xl font-bold text-blue-900 mb-6">
             Ajouter une Séance
-
         </h2>
 
+        <form method="post" asp-action="Create">
 
-        <form>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-                <!-- Parcours -->
-
+                <!-- PARCOURS -->
                 <div>
-
-                    <label class="block mb-2 font-medium">
-
+                    <label class="block mb-2 font-semibold text-gray-700">
                         Parcours
-
                     </label>
 
-                    <select class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900">
+                    <select asp-for="NouvelleSeance.IdParcours"
+                            class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-900 outline-none">
 
-                        <option>Sélectionner un parcours</option>
-                        <option>Génie Logiciel</option>
-                        <option>Réseaux</option>
-                        <option>Base de Données</option>
+                        <option value="">Sélectionner</option>
+
+                        @foreach (var p in Model.Parcours)
+                        {
+                            <option value="@p.IdParcours">
+                                @p.Nom
+                            </option>
+                        }
 
                     </select>
-
                 </div>
 
-
-                <!-- Matière -->
-
+                <!-- MATIERE -->
                 <div>
-
-                    <label class="block mb-2 font-medium">
-
+                    <label class="block mb-2 font-semibold text-gray-700">
                         Matière
-
                     </label>
 
-                    <select class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900">
+                    <select asp-for="NouvelleSeance.IdMatiere"
+                            class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-900 outline-none">
 
-                        <option>Sélectionner une matière</option>
-                        <option>Programmation Web</option>
-                        <option>Base de Données</option>
+                        <option value="">Sélectionner</option>
+
+                        @foreach (var m in Model.Matieres)
+                        {
+                            <option value="@m.IdMatiere">
+                                @m.Nom
+                            </option>
+                        }
 
                     </select>
-
                 </div>
 
-
-                <!-- Enseignant -->
-
+                <!-- ENSEIGNANT -->
                 <div>
-
-                    <label class="block mb-2 font-medium">
-
+                    <label class="block mb-2 font-semibold text-gray-700">
                         Enseignant
-
                     </label>
 
-                    <select class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900">
+                    <select asp-for="NouvelleSeance.IdEns"
+                            class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-900 outline-none">
 
-                        <option>Sélectionner un enseignant</option>
-                        <option>Rakoto Jean</option>
-                        <option>Rasoanaivo Marie</option>
+                        <option value="">Sélectionner</option>
+
+                        @foreach (var e in Model.Enseignants)
+                        {
+                            <option value="@e.IdEns">
+                                @e.Nom
+                            </option>
+                        }
 
                     </select>
-
                 </div>
 
-
-                <!-- Salle -->
-
+                <!-- SALLE -->
                 <div>
-
-                    <label class="block mb-2 font-medium">
-
+                    <label class="block mb-2 font-semibold text-gray-700">
                         Salle
-
                     </label>
 
-                    <select class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900">
+                    <select asp-for="NouvelleSeance.IdSalle"
+                            class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-900 outline-none">
 
-                        <option>Sélectionner une salle</option>
-                        <option>Salle A101</option>
-                        <option>Salle B204</option>
+                        <option value="">Sélectionner</option>
+
+                        @foreach (var s in Model.Salles)
+                        {
+                            <option value="@s.IdSalle">
+                                @s.Nom
+                            </option>
+                        }
 
                     </select>
-
                 </div>
 
-
-                <!-- Créneau -->
-
+                <!-- CRENEAU -->
                 <div>
-
-                    <label class="block mb-2 font-medium">
-
+                    <label class="block mb-2 font-semibold text-gray-700">
                         Créneau
-
                     </label>
 
-                    <select class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900">
+                    <select asp-for="NouvelleSeance.IdCreneau"
+                            class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-900 outline-none">
 
-                        <option>Sélectionner un créneau</option>
-                        <option>Lundi | 08:00 - 10:00</option>
-                        <option>Mardi | 10:00 - 12:00</option>
+                        <option value="">Sélectionner</option>
+
+                        @foreach (var c in Model.Creneaux)
+                        {
+                            <option value="@c.IdCreneau">
+                                @c.Jour |
+                                @c.HeureDebut -
+                                @c.HeureFin
+                            </option>
+                        }
 
                     </select>
-
                 </div>
 
             </div>
 
+            <!-- BUTTON -->
+            <button class="mt-8 bg-blue-900 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition">
 
-            <button class="mt-6 bg-blue-900 text-white px-5 py-3 rounded-lg hover:bg-blue-700">
-
-                Enregistrer
+                Enregistrer la Séance
 
             </button>
 
@@ -167,24 +168,21 @@
 
     </div>
 
-
-
-    <!-- Tableau -->
-
+    <!-- TABLE -->
     <div class="overflow-x-auto">
 
-        <table class="w-full">
+        <table class="w-full border-collapse overflow-hidden rounded-xl">
 
             <thead>
 
                 <tr class="bg-blue-900 text-white">
 
-                    <th class="p-3 border">Parcours</th>
-                    <th class="p-3 border">Matière</th>
-                    <th class="p-3 border">Enseignant</th>
-                    <th class="p-3 border">Salle</th>
-                    <th class="p-3 border">Créneau</th>
-                    <th class="p-3 border">Actions</th>
+                    <th class="p-4">Parcours</th>
+                    <th class="p-4">Matière</th>
+                    <th class="p-4">Enseignant</th>
+                    <th class="p-4">Salle</th>
+                    <th class="p-4">Créneau</th>
+                    <th class="p-4">Actions</th>
 
                 </tr>
 
@@ -192,32 +190,84 @@
 
             <tbody>
 
-                <tr class="text-center hover:bg-gray-100">
+                @if (Model.Seances != null && Model.Seances.Any())
+                {
+                    @foreach (var s in Model.Seances)
+                    {
+                        <tr class="text-center border-b hover:bg-gray-50 transition">
 
-                    
-                    <td class="border p-3">Génie Logiciel</td>
-                    <td class="border p-3">Programmation Web</td>
-                    <td class="border p-3">Rakoto Jean</td>
-                    <td class="border p-3">Salle A101</td>
-                    <td class="border p-3">Lundi 08:00-10:00</td>
+                            <td class="p-4">
+                                @s.Parcours?.Nom
+                            </td>
 
-                    <td class="border p-3">
+                            <td class="p-4">
+                                @s.Matiere?.Nom
+                            </td>
 
-                        <button class="bg-blue-700 text-white px-3 py-1 rounded">
+                            <td class="p-4">
+                                @s.Enseignant?.Nom
+                            </td>
 
-                            Modifier
+                            <td class="p-4">
+                                @s.Salle?.Nom
+                            </td>
 
-                        </button>
+                            <td class="p-4">
+                                @s.Creneau?.Jour
+                                |
+                                @s.Creneau?.HeureDebut
+                                -
+                                @s.Creneau?.HeureFin
+                            </td>
 
-                        <button class="bg-red-600 text-white px-3 py-1 rounded ml-2">
+                            <td class="p-4">
 
-                            Supprimer
+                                <!-- EDIT -->
+                                <a asp-action="Edit"
+                                   asp-route-id="@s.IdSeance"
+                                   class="bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">
 
-                        </button>
+                                    Modifier
 
-                    </td>
+                                </a>
 
-                </tr>
+                                <!-- DELETE -->
+                                <form method="post"
+                                      asp-action="Delete"
+                                      class="inline">
+
+                                    <input type="hidden"
+                                           name="id"
+                                           value="@s.IdSeance" />
+
+                                    <button type="submit"
+                                            onclick="return confirm('Supprimer cette séance ?')"
+                                            class="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-lg ml-2">
+
+                                        Supprimer
+
+                                    </button>
+
+                                </form>
+
+                            </td>
+
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+
+                        <td colspan="6"
+                            class="text-center text-gray-500 p-6">
+
+                            Aucune séance enregistrée
+
+                        </td>
+
+                    </tr>
+                }
 
             </tbody>
 
@@ -226,4 +276,4 @@
     </div>
 
 </div>
-
+```

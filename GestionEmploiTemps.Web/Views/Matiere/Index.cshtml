@@ -1,10 +1,36 @@
-﻿@{
+﻿@model List<GestionEmploiTemps.Web.Models.Matiere>
+
+@{
     ViewData["Title"] = "Gestion Matières";
+}
+
+<div id="toast"
+     class="hidden fixed top-5 right-5 px-4 py-3 rounded-lg shadow-lg text-white z-50">
+</div>
+
+<!--TEMPDATA : notification après actions -->
+@if (TempData["Success"] != null)
+{
+    <script>
+        window.onload = function () {
+            showToast("@TempData["Success"]", false);
+        };
+    </script>
+}
+
+@if (TempData["Error"] != null)
+{
+    <script>
+        window.onload = function () {
+            showToast("@TempData["Error"]", true);
+        };
+    </script>
 }
 
 <div class="bg-white rounded-xl shadow-lg p-6">
 
-    <!-- Titre -->
+    <!-- 🟦 TITRE -->
+    
     <div class="flex justify-between items-center mb-6">
 
         <div>
@@ -19,38 +45,30 @@
 
         </div>
 
-        <button class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-
-            + Nouvelle Matière
-
-        </button>
-
     </div>
 
-
-    <!-- Formulaire -->
-
-    <div class="bg-gray-50 p-6 rounded-lg mb-8">
+    <!-- 🟩 FORMULAIRE AJOUT -->
+   
+    <div class="bg-gray-50 p-6 rounded-lg mb-8 border">
 
         <h2 class="text-xl font-bold text-blue-900 mb-4">
-
             Ajouter une Matière
-
         </h2>
 
-        <form>
+        <!-- 🔥 connecté au controller MVC -->
+        <form method="post" asp-action="Create">
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
                 <div>
 
                     <label class="block mb-2 font-medium">
-
                         Nom Matière
-
                     </label>
 
+                    <!-- 🔥 name important pour binder -->
                     <input type="text"
+                           name="Nom"
                            placeholder="Ex : Programmation Web"
                            class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900 outline-none" />
 
@@ -58,8 +76,8 @@
 
             </div>
 
-
-            <button class="mt-6 bg-blue-900 text-white px-5 py-3 rounded-lg hover:bg-blue-700">
+            <button type="submit"
+                    class="mt-6 bg-blue-900 text-white px-5 py-3 rounded-lg hover:bg-blue-700 transition">
 
                 Enregistrer
 
@@ -70,22 +88,20 @@
     </div>
 
 
-    <!-- Tableau -->
-
+    <!-- 📋 TABLEAU -->
     <div class="overflow-x-auto">
 
-        <table class="w-full">
+        <table class="w-full border-collapse overflow-hidden rounded-lg shadow">
 
             <thead>
 
                 <tr class="bg-blue-900 text-white">
 
-
                     <th class="p-3 border">
                         Nom Matière
                     </th>
 
-                    <th class="p-3 border">
+                    <th class="p-3 border w-52">
                         Actions
                     </th>
 
@@ -95,56 +111,66 @@
 
             <tbody>
 
-                <tr class="text-center hover:bg-gray-100">
+                <!-- 🔥 données venant du backend -->
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var matiere in Model)
+                    {
+                        <tr class="text-center hover:bg-gray-100 transition">
 
-               
+                            <td class="border p-3">
+                                @matiere.Nom
+                            </td>
 
-                    <td class="border p-3">
-                        Programmation Web
-                    </td>
+                            <td class="border p-3 space-x-2">
 
-                    <td class="border p-3">
+                                <!-- 🔵 MODIFIER -->
+                             
+                                <a asp-action="Edit"
+                                   asp-route-id="@matiere.IdMatiere"
+                                   class="bg-blue-700 text-white px-3 py-1 rounded hover:bg-blue-800 transition">
 
-                        <button class="bg-blue-700 text-white px-3 py-1 rounded">
+                                    Modifier
 
-                            Modifier
+                                </a>
 
-                        </button>
+                                
+                                <!-- 🔴 SUPPRIMER -->
+            
+                                <form method="post"
+                                      asp-action="Delete"
+                                      asp-route-id="@matiere.IdMatiere"
+                                      class="inline">
 
-                        <button class="bg-red-600 text-white px-3 py-1 rounded ml-2">
+                                    <button type="submit"
+                                            onclick="return confirm('Voulez-vous vraiment supprimer cette matière ?');"
+                                            class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition">
 
-                            Supprimer
+                                        Supprimer
 
-                        </button>
+                                    </button>
 
-                    </td>
+                                </form>
 
-                </tr>
+                            </td>
 
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <!-- 🔥 si aucune donnée -->
+                    <tr>
 
-                <tr class="text-center hover:bg-gray-100">
+                        <td colspan="2"
+                            class="text-center p-6 text-gray-500">
 
-                    <td class="border p-3">
-                        Base de Données
-                    </td>
+                            Aucune matière trouvée
 
-                    <td class="border p-3">
+                        </td>
 
-                        <button class="bg-blue-700 text-white px-3 py-1 rounded">
-
-                            Modifier
-
-                        </button>
-
-                        <button class="bg-red-600 text-white px-3 py-1 rounded ml-2">
-
-                            Supprimer
-
-                        </button>
-
-                    </td>
-
-                </tr>
+                    </tr>
+                }
 
             </tbody>
 
@@ -153,3 +179,34 @@
     </div>
 
 </div>
+
+
+
+<!-- 🟨 JAVASCRIPT TOAST -->
+
+<script>
+
+    // 🔥 notification dynamique
+    function showToast(message, isError = false) {
+
+        const toast = document.getElementById("toast");
+
+        toast.innerText = message;
+
+        toast.className =
+            "fixed top-5 right-5 px-4 py-3 rounded-lg shadow-lg text-white z-50 " +
+            (isError
+                ? "bg-red-600"
+                : "bg-green-600");
+
+        toast.classList.remove("hidden");
+
+        // disparition après 3 secondes
+        setTimeout(() => {
+
+            toast.classList.add("hidden");
+
+        }, 3000);
+    }
+
+</script>

@@ -1,13 +1,37 @@
-﻿@{
+﻿@model List<GestionEmploiTemps.Web.Models.Salle>
+
+@{
     ViewData["Title"] = "Gestion Salle";
+}
+
+<div id="toast"
+     class="hidden fixed top-5 right-5 px-4 py-3 rounded-lg shadow-lg text-white z-50">
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <script>
+        window.onload = function () {
+            showToast("@TempData["Success"]", false);
+        };
+    </script>
+}
+
+@if (TempData["Error"] != null)
+{
+    <script>
+        window.onload = function () {
+            showToast("@TempData["Error"]", true);
+        };
+    </script>
 }
 
 <div class="bg-white rounded-xl shadow-lg p-6">
 
-    <!-- Titre -->
     <div class="flex justify-between items-center mb-6">
 
         <div>
+
             <h1 class="text-3xl font-bold text-blue-900">
                 Gestion des Salles
             </h1>
@@ -15,59 +39,48 @@
             <p class="text-gray-500">
                 Ajouter et gérer les salles disponibles
             </p>
+
         </div>
 
-        <button class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-
+        <!-- juste décoratif -->
+        <button class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
             + Nouvelle Salle
-
         </button>
 
     </div>
 
-
-    <!-- Formulaire -->
-
-    <div class="bg-gray-50 p-6 rounded-lg mb-8">
+    <div class="bg-gray-50 p-6 rounded-lg mb-8 border">
 
         <h2 class="text-xl font-bold text-blue-900 mb-4">
-
             Ajouter une Salle
-
         </h2>
 
-        <form>
+        <!-- 🔥 connecté au controller -->
+        <form method="post" asp-action="Create">
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-                <!-- Nom salle -->
 
                 <div>
 
                     <label class="block mb-2 font-medium">
-
                         Nom Salle
-
                     </label>
 
                     <input type="text"
+                           name="Nom"
                            placeholder="Ex : Salle A101"
                            class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900 outline-none" />
 
                 </div>
 
-
-                <!-- Capacité -->
-
                 <div>
 
                     <label class="block mb-2 font-medium">
-
                         Capacité
-
                     </label>
 
                     <input type="number"
+                           name="Capacite"
                            placeholder="Ex : 40"
                            class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-900 outline-none" />
 
@@ -75,8 +88,8 @@
 
             </div>
 
-
-            <button class="mt-6 bg-blue-900 text-white px-5 py-3 rounded-lg hover:bg-blue-700">
+            <button type="submit"
+                    class="mt-6 bg-blue-900 text-white px-5 py-3 rounded-lg hover:bg-blue-700 transition">
 
                 Enregistrer
 
@@ -87,17 +100,16 @@
     </div>
 
 
-
-    <!-- Tableau -->
+    <!-- 📋 TABLEAU -->
+ 
 
     <div class="overflow-x-auto">
 
-        <table class="w-full">
+        <table class="w-full border-collapse overflow-hidden rounded-lg shadow">
 
             <thead>
 
                 <tr class="bg-blue-900 text-white">
-
 
                     <th class="p-3 border">
                         Nom Salle
@@ -107,7 +119,7 @@
                         Capacité
                     </th>
 
-                    <th class="p-3 border">
+                    <th class="p-3 border w-52">
                         Actions
                     </th>
 
@@ -115,69 +127,67 @@
 
             </thead>
 
-
             <tbody>
 
-                <tr class="text-center hover:bg-gray-100">
+                <!-- 🔥 données venant API -->
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var salle in Model)
+                    {
+                        <tr class="text-center hover:bg-gray-100 transition">
 
-                    <td class="border p-3">
-                        Salle A101
-                    </td>
+                            <td class="border p-3">
+                                @salle.Nom
+                            </td>
 
-                    <td class="border p-3">
-                        40
-                    </td>
+                            <td class="border p-3">
+                                @salle.Capacite
+                            </td>
 
-                    <td class="border p-3">
+                            <td class="border p-3 space-x-2">
 
-                        <button class="bg-blue-700 text-white px-3 py-1 rounded">
+                                <a asp-action="Edit"
+                                   asp-route-id="@salle.IdSalle"
+                                   class="bg-blue-700 text-white px-3 py-1 rounded hover:bg-blue-800 transition">
 
-                            Modifier
+                                    Modifier
 
-                        </button>
+                                </a>
 
-                        <button class="bg-red-600 text-white px-3 py-1 rounded ml-2">
+                                <form method="post"
+                                      asp-action="Delete"
+                                      asp-route-id="@salle.IdSalle"
+                                      class="inline">
 
-                            Supprimer
+                                    <button type="submit"
+                                            onclick="return confirm('Voulez-vous vraiment supprimer cette salle ?');"
+                                            class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition">
 
-                        </button>
+                                        Supprimer
 
-                    </td>
+                                    </button>
 
-                </tr>
+                                </form>
 
+                            </td>
 
-                <tr class="text-center hover:bg-gray-100">
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <!-- 🔥 aucune donnée -->
+                    <tr>
 
-                    <td class="border p-3">
-                        2
-                    </td>
+                        <td colspan="3"
+                            class="text-center p-6 text-gray-500">
 
-                    <td class="border p-3">
-                        Salle B204
-                    </td>
+                            Aucune salle trouvée
 
-                    <td class="border p-3">
-                        25
-                    </td>
+                        </td>
 
-                    <td class="border p-3">
-
-                        <button class="bg-blue-700 text-white px-3 py-1 rounded">
-
-                            Modifier
-
-                        </button>
-
-                        <button class="bg-red-600 text-white px-3 py-1 rounded ml-2">
-
-                            Supprimer
-
-                        </button>
-
-                    </td>
-
-                </tr>
+                    </tr>
+                }
 
             </tbody>
 
@@ -187,3 +197,30 @@
 
 </div>
 
+<!-- 🟨 SCRIPT TOAST -->
+
+
+<script>
+
+    function showToast(message, isError = false) {
+
+        const toast = document.getElementById("toast");
+
+        toast.innerText = message;
+
+        toast.className =
+            "fixed top-5 right-5 px-4 py-3 rounded-lg shadow-lg text-white z-50 " +
+            (isError
+                ? "bg-red-600"
+                : "bg-green-600");
+
+        toast.classList.remove("hidden");
+
+        setTimeout(() => {
+
+            toast.classList.add("hidden");
+
+        }, 3000);
+    }
+
+</script>

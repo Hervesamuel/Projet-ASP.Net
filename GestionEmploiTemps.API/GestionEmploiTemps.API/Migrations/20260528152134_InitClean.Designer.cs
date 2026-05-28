@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionEmploiTemps.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260527073248_FixEnseignerRelation")]
-    partial class FixEnseignerRelation
+    [Migration("20260528152134_InitClean")]
+    partial class InitClean
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

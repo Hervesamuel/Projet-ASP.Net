@@ -1,0 +1,173 @@
+﻿@model GestionEmploiTemps.Web.Models.ViewModels.AcademiqueVM
+
+@{
+    ViewData["Title"] = "Gestion Académique";
+}
+
+<!-- TOAST -->
+<div id="toast" class="hidden fixed top-5 right-5 px-4 py-3 rounded-lg text-white shadow-lg"></div>
+
+@if (TempData["Success"] != null)
+{
+    <script>
+        window.onload = () => showToast("@TempData["Success"]", false);
+    </script>
+}
+
+@if (TempData["Error"] != null)
+{
+    <script>
+        window.onload = () => showToast("@TempData["Error"]", true);
+    </script>
+}
+
+<div class="bg-white p-6 rounded-xl shadow-lg">
+
+    
+    <!-- 🟦 NIVEAUX (TOGGLE) -->
+
+    <div class="mb-6 border rounded-lg">
+        <div class="bg-blue-900 text-white p-3 flex justify-between items-center cursor-pointer"
+             onclick="toggleNiveaux()">
+
+            <h2 class="text-xl font-bold">Niveaux</h2>
+
+            <span id="iconNiveau">▼</span>
+
+        </div>
+        <div id="niveauContent" class="p-4 hidden">
+            <form method="post" asp-action="CreateNiveau" class="mb-4">
+
+                <input type="text"
+                       name="NouveauNiveau"
+                       placeholder="Ex: L1"
+                       class="border p-2 rounded w-1/3" />
+
+                <button class="bg-blue-900 text-white px-4 py-2 rounded ml-2">
+                    Ajouter
+                </button>
+
+            </form>
+
+            <!-- LISTE -->
+            <ul>
+                @foreach (var n in Model.Niveaux)
+                {
+                    <li class="p-2 border-b">@n.Nom</li>
+                }
+            </ul>
+
+        </div>
+
+    </div>
+
+    
+    <!-- 🟩 PARCOURS -->
+    
+    <h2 class="text-xl font-bold text-blue-900 mb-3">Parcours</h2>
+
+    <form method="post" asp-action="CreateParcours" class="mb-4">
+
+        <input type="text"
+               name="NouveauParcours"
+               placeholder="Ex: Informatique"
+               class="border p-2 rounded w-1/3" />
+
+        <select name="IdNiveau" class="border p-2 rounded ml-2">
+            <option value="">Choisir niveau</option>
+
+            @foreach (var n in Model.Niveaux)
+            {
+                <option value="@n.IdNiveau">@n.Nom</option>
+            }
+        </select>
+
+        <button class="bg-blue-900 text-white px-4 py-2 rounded ml-2">
+            Ajouter
+        </button>
+
+    </form>
+
+    <table class="w-full border mt-4">
+
+        <thead class="bg-blue-900 text-white">
+
+            <tr>
+                <th class="p-2">Parcours</th>
+                <th class="p-2">Niveau</th>
+                <th class="p-2">Actions</th> <!-- 🔥 AJOUT -->
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            @foreach (var p in Model.Parcours)
+            {
+                <tr class="text-center border">
+                    <td class="p-2">
+                        @p.Nom
+                    </td>
+
+                    <td class="p-2">
+                        @p.NomNiveau
+                    </td>
+
+                    <!-- ACTIONS -->
+                    <td class="p-2">
+                        <a href="/Parcours/Edit?id=@p.IdParcours"
+                            class="bg-blue-700 text-white px-3 py-1 rounded">
+                            Modifier
+                        </a>
+
+                        <form method="post"
+                              action="/Parcours/DeleteParcours"
+                              class="inline">
+
+                            <input type="hidden" name="id" value="@p.IdParcours" />
+
+                            <button type="submit"
+                                    onclick="return confirm('Voulez-vous vraiment supprimer ce parcours ?')"
+                                    class="bg-red-600 text-white px-3 py-1 rounded ml-2 hover:bg-red-700">
+
+                                Supprimer
+
+                            </button>
+
+                        </form>
+
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script>
+    function showToast(msg, error=false){
+        const t = document.getElementById("toast");
+        t.innerText = msg;
+        t.className = "fixed top-5 right-5 px-4 py-2 rounded text-white " + (error ? "bg-red-600" : "bg-green-600");
+        t.classList.remove("hidden");
+        setTimeout(()=> t.classList.add("hidden"), 3000);
+    }
+</script>
+
+<script>
+    function toggleNiveaux() {
+        const content = document.getElementById("niveauContent");
+        const icon = document.getElementById("iconNiveau");
+
+        if (content.classList.contains("hidden")) {
+            content.classList.remove("hidden");
+            icon.innerText = "▲";
+        } else {
+            content.classList.add("hidden");
+            icon.innerText = "▼";
+        }
+    }
+</script>

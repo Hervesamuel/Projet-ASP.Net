@@ -1,0 +1,74 @@
+﻿@model GestionEmploiTemps.Web.Models.ViewModels.SeanceVM
+
+<div class="bg-white p-6 rounded-xl shadow">
+
+    <h2 class="text-2xl font-bold text-blue-900 mb-6">
+        Modifier la Séance
+    </h2>
+
+    <form method="post">
+
+        <input type="hidden" asp-for="NouvelleSeance.IdSeance" />
+
+        <div class="grid grid-cols-2 gap-4">
+
+            <!-- mêmes dropdowns -->
+            <select asp-for="NouvelleSeance.IdParcours" class="border p-2 rounded">
+                @foreach (var p in Model.Parcours)
+                {
+                    <option value="@p.IdParcours"
+                            selected="@(p.IdParcours == Model.NouvelleSeance.IdParcours)">
+                        @p.Nom
+                    </option>
+                }
+            </select>
+
+            <select asp-for="NouvelleSeance.IdMatiere" class="border p-2 rounded">
+                @foreach (var m in Model.Matieres)
+                {
+                    <option value="@m.IdMatiere"
+                            selected="@(m.IdMatiere == Model.NouvelleSeance.IdMatiere)">
+                        @m.Nom
+                    </option>
+                }
+            </select>
+
+            <select asp-for="NouvelleSeance.IdEns" class="border p-2 rounded">
+                @foreach (var e in Model.Enseignants)
+                {
+                    <option value="@e.IdEns"
+                            selected="@(e.IdEns == Model.NouvelleSeance.IdEns)">
+                        @e.Nom
+                    </option>
+                }
+            </select>
+
+            <select asp-for="NouvelleSeance.IdSalle" class="border p-2 rounded">
+                @foreach (var s in Model.Salles)
+                {
+                    <option value="@s.IdSalle"
+                            selected="@(s.IdSalle == Model.NouvelleSeance.IdSalle)">
+                        @s.Nom
+                    </option>
+                }
+            </select>
+
+            <select asp-for="NouvelleSeance.IdCreneau" class="border p-2 rounded">
+                @foreach (var c in Model.Creneaux)
+                {
+                    <option value="@c.IdCreneau"
+                            selected="@(c.IdCreneau == Model.NouvelleSeance.IdCreneau)">
+                        @c.Jour | @c.HeureDebut - @c.HeureFin
+                    </option>
+                }
+            </select>
+
+        </div>
+
+        <button class="mt-6 bg-blue-900 text-white px-4 py-2 rounded">
+            Modifier
+        </button>
+
+    </form>
+
+</div>

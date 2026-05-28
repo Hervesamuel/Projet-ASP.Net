@@ -66,6 +66,31 @@ namespace GestionEmploiTemps.API.Controllers
             }
         }
 
+        // GET : api/Salle/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Salle>> GetSalle(int id)
+        {
+            try
+            {
+                var salle = await _context.Salles
+                    .FirstOrDefaultAsync(s => s.IdSalle == id);
+
+                if (salle == null)
+                {
+                    return NotFound("Salle introuvable");
+                }
+
+                return Ok(salle);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(
+                    500,
+                    $"Erreur récupération salle : {ex.Message}"
+                );
+            }
+        }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

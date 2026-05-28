@@ -2,89 +2,149 @@ using GestionEmploiTemps.API.Data;
 using GestionEmploiTemps.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace GestionEmploiTemps.API.Controllers
 {
-	[Route("api/[controller]")]
-	[ApiController]
-	public class ParcoursController : ControllerBase
-	{
-		private readonly AppDbContext _context;
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ParcoursController : ControllerBase
+    {
+        private readonly AppDbContext _context;
 
-		public ParcoursController(AppDbContext context)
-		{
-			_context = context;
-		}
+        public ParcoursController(AppDbContext context)
+        {
+            _context = context;
+        }
 
-		[HttpGet]
-		public async Task<ActionResult<IEnumerable<Parcours>>> Get()
-		{
-			try
-			{
-				return Ok(await _context.Parcours
-					.Include(p => p.Niveau)
-					.Include(p => p.Seances)
-					.ToListAsync());
-			}
-			catch (Exception ex)
-			{
-				return StatusCode(500, ex.Message);
-			}
-		}
+        
+        // GET ALL (AVEC NOM NIVEAU - VERSION PROPRE)
+        
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            try
+            {
+                var data = await _context.Parcours
+                    .Include(p => p.Niveau)
+                    .Select(p => new
+                    {
+                        IdParcours = p.IdParcours,
+                        Nom = p.Nom,
+                        IdNiveau = p.IdNiveau,
+                        NomNiveau = p.Niveau != null ? p.Niveau.Nom : ""
+                    })
+                    .ToListAsync();
 
-		[HttpPost]
-		public async Task<IActionResult> Create(Parcours p)
-		{
-			try
-			{
-				await _context.Parcours.AddAsync(p);
-				await _context.SaveChangesAsync();
-				return Ok("Parcours ajouté");
-			}
-			catch (Exception ex)
-			{
-				return StatusCode(500, ex.Message);
-			}
-		}
+                return Ok(data);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erreur récupération parcours : {ex.Message}");
+            }
+        }
 
-		[HttpPut("{id}")]
-		public async Task<IActionResult> Update(int id, Parcours p)
-		{
-			try
-			{
-				if (id != p.IdParcours) return BadRequest();
+       
+        //  GET BY ID
+       
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            try
+            {
+                var p = await _context.Parcours
+                    .Include(x => x.Niveau)
+                    .FirstOrDefaultAsync(x => x.IdParcours == id);
 
-				_context.Entry(p).State = EntityState.Modified;
-				await _context.SaveChangesAsync();
+                if (p == null)
+                    return NotFound("Parcours introuvable");
 
-				return Ok("Modifié");
-			}
-			catch (Exception ex)
-			{
-				return StatusCode(500, ex.Message);
-			}
-		}
+                var result = new
+                {
+                    IdParcours = p.IdParcours,
+                    Nom = p.Nom,
+                    IdNiveau = p.IdNiveau,
+                    NomNiveau = p.Niveau != null ? p.Niveau.Nom : ""
+                };
 
-		[HttpDelete("{id}")]
-		public async Task<IActionResult> Delete(int id)
-		{
-			try
-			{
-				var p = await _context.Parcours.FindAsync(id);
-				if (p == null) return NotFound();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erreur : {ex.Message}");
+            }
+        }
 
-				_context.Parcours.Remove(p);
-				await _context.SaveChangesAsync();
+       
+        //CREATE
+       
+        [HttpPost]
+        public async Task<IActionResult> Create(Parcours p)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(p.Nom))
+                    return BadRequest("Nom obligatoire");
 
-				return Ok("Supprimé");
-			}
-			catch (Exception ex)
-			{
-				return StatusCode(500, ex.Message);
-			}
-		}
-	}
+                if (p.IdNiveau <= 0)
+                    return BadRequest("Niveau invalide");
+
+                await _context.Parcours.AddAsync(p);
+                await _context.SaveChangesAsync();
+
+                return Ok("Action reussi");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erreur création : {ex.Message}");
+            }
+        }
+
+       
+        // UPDATE 
+        
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, Parcours p)
+        {
+            try
+            {
+                var existing = await _context.Parcours.FindAsync(id);
+
+                if (existing == null)
+                    return NotFound("Parcours introuvable");
+
+                existing.Nom = p.Nom;
+                existing.IdNiveau = p.IdNiveau;
+
+                await _context.SaveChangesAsync();
+
+                return Ok("Action reussi");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erreur modification : {ex.Message}");
+            }
+        }
+        // DELETE
+       
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                var p = await _context.Parcours.FindAsync(id);
+
+                if (p == null)
+                    return NotFound("Parcours introuvable");
+
+                _context.Parcours.Remove(p);
+                await _context.SaveChangesAsync();
+
+                return Ok("Action reussi");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erreur suppression : {ex.Message}");
+            }
+        }
+    }
 }

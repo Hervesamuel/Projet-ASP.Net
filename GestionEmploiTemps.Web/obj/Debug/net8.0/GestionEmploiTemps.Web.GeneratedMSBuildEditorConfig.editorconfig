@@ -23,6 +23,14 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
+[D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/Creneau/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JlbmVhdVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/Creneau/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JlbmVhdVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/EmploiDuTemps/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG9pRHVUZW1wc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -47,12 +55,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/Matiere/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0aWVyZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/Matiere/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0aWVyZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/Parcours/EditNiveau.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyY291cnNcRWRpdE5pdmVhdS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/Parcours/EditParcours.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyY291cnNcRWRpdFBhcmNvdXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/Parcours/EditParcoursNiveau.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyY291cnNcRWRpdFBhcmNvdXJzTml2ZWF1LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/Parcours/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyY291cnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/Salle/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsbGVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/Salle/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsbGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/Seance/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhbmNlXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ProjetASP.NET/Projet-ASP.Net/GestionEmploiTemps.Web/Views/Seance/Index.cshtml]
